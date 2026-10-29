@@ -9,13 +9,6 @@ Standards-Version: 4.7.0
 Vcs-Browser: https://github.com/furilabs/andromeda
 Vcs-Git: https://github.com/furilabs/andromeda.git
 
-Package: waydroid
-Architecture: all
-Depends: andromeda
-Description: Android™ application support
- waydroid allows running a separate Android™ environment
- confined to a LXC container. - this is a transitional package
-
 Package: andromeda
 Architecture: all
 Pre-Depends: andromeda-system-image,
@@ -25,8 +18,10 @@ Depends: ${misc:Depends},
          lxc,
          python3-gbinder,
          python3-gi,
-         andromeda-sensors,
          python3-dbus,
+         python3-dbus,
+         gir1.2-geoclue-2.0,
+         geoclue-2.0,
          dbus,
          polkitd | policykit-1,
          iptables,
@@ -37,9 +32,3 @@ Depends: ${misc:Depends},
 Description: Android™ application support
  Andromeda allows running a separate Android™ environment
  confined to a LXC container.
-
-Package: android-store
-Architecture: all
-Depends: ${misc:Depends},
-Description: Android software store bridge
- This bridge allows to install Android apps from software stores through DBus - this is a transitional package
